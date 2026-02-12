@@ -1,0 +1,57 @@
+<div class="container">
+    <h1>Nueva Persona</h1>
+    <form action="/persona/c" method="post">
+        <label for="id-n">LoginName:</label>
+        <input type="text" name="loginName" id="id-ln" required />
+
+        <br/><br/>
+
+        <label for="id-n">Contraseña</label>
+        <input type="password" name="pwd" id="id-pwd" required />
+
+        <br/><br/>
+
+        <label for="id-n">Nombre:</label>
+        <input type="text" name="nombre" id="id-n" required />
+
+        <br/><br/>
+
+
+        <label>País de Nacimiento:</label>
+        <select name="idPaisNace">
+            <option th:each="p : ${paises}" th:value="${p.id}" th:text="${p.nombre}"></option>
+        </select>
+
+        <br/>
+
+        <label>País de Residencia:</label>
+        <select name="idPaisVive">
+            <option th:each="p : ${paises}" th:value="${p.id}" th:text="${p.nombre}"></option>
+        </select>
+
+        <hr/>
+
+        <h3>¿Qué le gusta?</h3>
+        <div th:each="af : ${aficiones}">
+            <input type="checkbox"
+                    name="idAficionGu[]"
+                    th:value="${af.id}"
+                    th:id="${'g' + af.id}" />
+            <label th:for="${'g' + af.id}" th:text="${af.nombre}"></label>
+        </div>
+
+        <hr/>
+
+        <h3>¿Qué odia?</h3>
+        <div th:each="af : ${aficiones}">
+            <input type="checkbox"
+                    name="idAficionOd[]"
+                    th:value="${af.id}"
+                    th:id="${'o' + af.id}" />
+            <label th:for="${'o' + af.id}" th:text="${af.nombre}"></label>
+        </div>
+
+        <br/>
+        <button type="submit">Guardar Persona</button>
+    </form>
+</div>

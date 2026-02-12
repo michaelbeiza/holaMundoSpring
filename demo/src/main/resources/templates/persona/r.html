@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Listado de personas</h1>
+    <button onclick="window.location.href='/persona/c'">Nueva Persona</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Nace en</th>
+                <th>Vive en</th>
+                <th>Le gusta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="p : ${personas}">
+                <td th:text="${p.nombre}"></td>
+                <td th:text="${p.paisNacimiento != null ? p.paisNacimiento.nombre : 'N/A'}"></td>
+                <td th:text="${p.paisResidencia != null ? p.paisResidencia.nombre : 'N/A'}"></td>
+                <td>
+                    <ul>
+                        <li th:each="g : ${p.gustos}" th:text="${g.nombre}"></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <!--
+    each crea por cada dato asignado a la variable una etiqueta h3 , es decir de la etiqueta en la que esta enmarcada
+    Thymeleaf reconoce que el atributo es privado y hay que hacer uso de su getter
+    Se puede ejecutar el metodo con getter o simplemente poner el atributo
+    -->

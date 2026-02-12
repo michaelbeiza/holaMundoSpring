@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Editar pais</h1>
+    <form action="/pais/u" method="post">
+        <label>Nombre</label>
+        <input type="text" name="nombre" th:value="${pais.nombre}">
+        <br />
+
+        <input type="hidden" name="idPais" th:value="${pais.id}" />
+        <input type="submit" value="Guardar">
+    </form>
+</div>

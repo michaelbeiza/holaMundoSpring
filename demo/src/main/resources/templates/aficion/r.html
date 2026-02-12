@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Listado de Aficiones</h1>
+    <button onclick="window.location.href='/aficion/c'">Nueva Afición</button>
+    
+    <table border="1" class="table-primary">
+        <thead>
+            <tr>
+                <th>Nombre de la Afición</th>
+                <th>Editar </th>
+                <th>Borrar </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="a : ${aficiones}">
+                <td th:text="${a.nombre}" style="font-weight: bold;"></td>
+                <td>
+                    <form action="/aficion/u">
+                        <input type="hidden" name="idAficion" th:value="${a.id}">
+                        <button type="submit">
+                            <img src="/img/icons/lapiz.png" width="20" height="20">
+                        </button>
+                    </form>
+                    </td>
+    
+                    <td>
+                    <form action="/aficion/d" form="post">
+                        <input type="hidden" name="idAficion" th:value="${a.id}">
+                        <button type="submit">
+                            <img src="/img/icons/trash.png" width="20" height="20">
+                        </button>
+                    </form>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div th:if="${#lists.isEmpty(aficiones)}">
+        <p>No hay aficiones registradas todavía.</p>
+    </div>
+</div>

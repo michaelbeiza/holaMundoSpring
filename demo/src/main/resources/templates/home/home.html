@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hola mundo</h1>
+        <h3>Buenos días <th:block th:text="${nombre}"/></h3>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <!--<button onclick="window.location.href='http:\/\/www.google.com'">Saludador</button>-->
+            <button onclick="window.location.href='/persona/r'" class="btn btn-primary">Crear persona</button>
+            <button onclick="window.location.href='/pais/r'" class="btn btn-primary">Crear pais</button>
+            <button onclick="window.location.href='/aficion/r'" class="btn btn-primary">Crear Aficion</button>
+        </div>
+    </div>
+</body>
+</html>

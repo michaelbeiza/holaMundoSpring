@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Listado de personas</h1>
+    <button onclick="window.location.href='/pais/c'">Nueva</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pais: ${paises}">
+                <td th:text="${pais.nombre}"></td>
+
+                <td>
+                <form action="/pais/u">
+                    <input type="hidden" name="idPais" th:value="${pais.id}">
+                    <button type="submit">
+                        <img src="/img/icons/lapiz.png" width="20" height="20">
+                    </button>
+                </form>
+                </td>
+
+                <td>
+                <form action="/pais/d" form="post">
+                    <input type="hidden" name="idPais" th:value="${pais.id}">
+                    <button type="submit">
+                        <img src="/img/icons/trash.png" width="20" height="20">
+                    </button>
+                </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--
+    each crea por cada dato asignado a la variable una etiqueta h3 , es decir de la etiqueta en la que esta enmarcada
+    Thymeleaf reconoce que el atributo es privado y hay que hacer uso de su getter
+    Se puede ejecutar el metodo con getter o simplemente poner el atributo
+    -->
+</div>
