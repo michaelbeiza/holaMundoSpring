@@ -51,8 +51,8 @@ public class AficionController {
     }
 
     @GetMapping("u")
-    public String uGet(@RequestParam("idPais") Long idPais, ModelMap m) {
-        m.put("aficion", afr.getReferenceById(idPais));
+    public String uGet(@RequestParam("idAficion") Long idAficion, ModelMap m) {
+        m.put("aficion", afr.getReferenceById(idAficion));
         m.put("view", "aficion/uGet");
         return "_t/frame";
     }

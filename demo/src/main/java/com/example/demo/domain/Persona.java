@@ -34,9 +34,11 @@ public class Persona {
     @ManyToOne
     private Pais paisResidencia;
     @ManyToMany
-    private Collection<Aficion> gustos;
+    @Builder.Default
+    private Collection<Aficion> gustos = new ArrayList<>();
     @ManyToMany
-    private Collection<Aficion> odios;
+    @Builder.Default
+    private Collection<Aficion> odios = new ArrayList<>();
 
 
     public Persona(String nombre){

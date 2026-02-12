@@ -48,8 +48,8 @@ public class PersonaController {
         @RequestParam(required = true) String pwd,
         @RequestParam("idPaisNace")Long idPaisNace,
         @RequestParam("idPaisVive")Long idPaisVive,
-        @RequestParam(value = "idAficionGu[]", required = false)Collection<Long> idGusto,
-        @RequestParam(value ="idAficionOd[]", required = false)Collection<Long> idOdio,
+        @RequestParam(value = "idAficionGu", required = false)Collection<Long> idGusto,
+        @RequestParam(value ="idAficionOd", required = false)Collection<Long> idOdio,
         ModelMap m
         //Guarda los datos de la nueva persona
     ){

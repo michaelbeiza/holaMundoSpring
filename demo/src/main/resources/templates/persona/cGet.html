@@ -34,7 +34,7 @@
         <h3>¿Qué le gusta?</h3>
         <div th:each="af : ${aficiones}">
             <input type="checkbox"
-                    name="idAficionGu[]"
+                    name="idAficionGu"
                     th:value="${af.id}"
                     th:id="${'g' + af.id}" />
             <label th:for="${'g' + af.id}" th:text="${af.nombre}"></label>
@@ -45,7 +45,7 @@
         <h3>¿Qué odia?</h3>
         <div th:each="af : ${aficiones}">
             <input type="checkbox"
-                    name="idAficionOd[]"
+                    name="idAficionOd"
                     th:value="${af.id}"
                     th:id="${'o' + af.id}" />
             <label th:for="${'o' + af.id}" th:text="${af.nombre}"></label>
